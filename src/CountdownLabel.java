@@ -1,10 +1,9 @@
-package edu.toronto.cs.bangashm.csc207.countdowntimer;
 
 import javafx.scene.control.Label;
 
 /**
- * This label observes the CountdownModel and updates its text on every
- * observer notification.
+ * This label observes the CountdownModel and updates its text on every observer
+ * notification.
  * 
  * @author arsala
  */

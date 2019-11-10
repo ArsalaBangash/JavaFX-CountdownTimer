@@ -1,4 +1,3 @@
-package edu.toronto.cs.bangashm.csc207.countdowntimer;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -7,10 +6,10 @@ import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 /**
- * This class stores the state of our Countdown Timer. 
+ * This class stores the state of our Countdown Timer.
  * 
- * Observer views are able to attach to this model and get 
- * notified when the state of the countdown timer changes. 
+ * Observer views are able to attach to this model and get notified when the
+ * state of the countdown timer changes.
  * 
  * @author arsala
  *
@@ -23,8 +22,8 @@ public class CountdownTimerModel extends Observable {
 	Timeline countdownTimeline = new Timeline();
 
 	/**
-	 * When the countdownTimeline ticks, it fires an event. 
-	 * We handle this event by counting down the seconds left. 
+	 * When the countdownTimeline ticks, it fires an event. We handle this event by
+	 * counting down the seconds left.
 	 */
 	EventHandler countdownEventHandler = new EventHandler() {
 
@@ -39,12 +38,12 @@ public class CountdownTimerModel extends Observable {
 
 	};
 
-
 	public CountdownTimerModel() {
 		countdownTimeline.setCycleCount(Timeline.INDEFINITE);
 		/*
-		 * Timelines use keyframes to represent iterations of time slices. Our time slice 
-		 * is 1s long and has a handler for the tick event that gets fired every second. 
+		 * Timelines use keyframes to represent iterations of time slices. Our time
+		 * slice is 1s long and has a handler for the tick event that gets fired every
+		 * second.
 		 */
 		KeyFrame perSecondKeyFrame = new KeyFrame(Duration.seconds(1), countdownEventHandler);
 		countdownTimeline.getKeyFrames().add(perSecondKeyFrame);
@@ -54,7 +53,7 @@ public class CountdownTimerModel extends Observable {
 		System.out.println("Starting Timer");
 		countdownTimeline.play();
 	}
-	
+
 	public void pauseTimer() {
 		System.out.println("Pausing Timer");
 		countdownTimeline.pause();

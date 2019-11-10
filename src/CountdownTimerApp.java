@@ -1,4 +1,3 @@
-package edu.toronto.cs.bangashm.csc207.countdowntimer;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -54,12 +53,13 @@ public class CountdownTimerApp extends Application {
 		setButtonControllers();
 
 		// VIEW LAYOUT
-		buttonsContainer.setPadding(new Insets(5));
+		buttonsContainer.setPadding(new Insets(10, 0, 10, 0));
 		buttonsContainer.getChildren().addAll(startTimerBtn, resetTimerBtn, pauseTimerBtn);
+		root.setPadding(new Insets(5));
 		root.getChildren().addAll(buttonsContainer, countdownLabel);
 
 		// VIEW SCENE
-		Scene scene = new Scene(root, 200, 100);
+		Scene scene = new Scene(root, 250, 75);
 
 		// VIEW STAGE
 		startStage.setTitle("JavaFX Countdown Timer");
